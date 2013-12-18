@@ -2,6 +2,10 @@ GiveAndTakeApp::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  root :to => "activities#index"
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+
+  resources :activities
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
