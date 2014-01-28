@@ -1,0 +1,10 @@
+<h1>Activities</h1>
+
+<div id="activities" >
+	<% @activities.each do |activity| %>
+	  <h2><%= link_to activity.name, activity %></h2>
+	  <%= simple_format activity.content %>
+	<% end %>
+</div>
+
+<p><%= link_to "New Activity", new_activity_path %></p>

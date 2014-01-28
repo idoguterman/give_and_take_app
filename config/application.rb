@@ -8,6 +8,9 @@ Bundler.require(:default, Rails.env)
 
 module GiveAndTakeApp
   class Application < Rails::Application
+
+
+    #config.action_view.javascript_expansions[:defaults] = %w(jquery.min jquery_ujs)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

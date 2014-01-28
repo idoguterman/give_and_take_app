@@ -1,0 +1,8 @@
+<h1><%= @activity.name %></h1>
+
+<%= simple_format @activity.content %>
+
+<p>
+  <%= link_to "Edit", edit_activity_path(@activity) %> |
+  <%= link_to "Back to Articles", activities_path %>
+</p>

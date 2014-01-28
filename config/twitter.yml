@@ -1,0 +1,11 @@
+development:
+  key: PesecNsROXzUEWEFm0b7w
+  secret: Kcb90CSAK9c2cw5MzvfXg0co2p1KuYcy7L3xnGQg
+
+test:
+  key: 12345
+  secret: abcdef
+
+production:
+  key: 23456
+  secret: bcdefg
