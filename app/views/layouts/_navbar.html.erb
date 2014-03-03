@@ -1,0 +1,35 @@
+  <header class="header-11">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+                        <button type="button" class="btn btn-navbar">#TODO</button>
+			<a class="brand" href="#"><%= image_tag "logo@2x.png", :width=>"50", :height=>"30", :alt=>"" %> Startup</a>
+                        <div class="nav-collapse collapse pull-right">
+                            <ul class="nav">
+                                <li class="active"><a href="#">HOME</a></li>
+                                <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">BLOG</a></li>
+                                <li><a href="#">CONTACT</a></li>
+                                <% if user_signed_in? %>
+                                  <li class="pull-right">
+                                    <% link_to "SIGN OUT" , destroy_user_session_path, :method => :delete %>
+                                  </li>
+                                <% end %>                      
+                              </ul>
+				<% if user_signed_in? %>
+				<ul class="pull-left">
+				<li>
+Signed in as <%= current_user.email %>. Not you? <%= link_to "Sign out", destroy_user_session_path , :method => :delete %>
+</li></ul>
+				<% else %>
+					<form class="navbar-form pull-left">
+						<%= link_to "SIGN IN" ,authentications_path, :class=>"btn btn-primary" %>
+					</form>
+				<% end %>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+        </header>
+<%-#		<li><%= link_to "Sign up", new_user_registration_path %>
+

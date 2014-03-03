@@ -1,0 +1,26 @@
+<% title "Images" %>
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>User</th>
+    <th>Avatar File Name</th>
+    <th>Avatar Content Type</th>
+    <th>Avatar File Size</th>
+    <th>Avatar Updated At</th>
+  </tr>
+  <% for image in @images %>
+    <tr>
+      <td><%= image.description %></td>
+      <td><%= image.avatar_file_name %></td>
+      <td><%= image.avatar_content_type %></td>
+      <td><%= image.avatar_file_size %></td>
+      <td><%= image.avatar_updated_at %></td>
+      <td><%= link_to "Show", user_image_path(@user,image.id) %></td>
+      <td><%= link_to "Edit", edit_user_image_path(@user,image.id) %></td>
+      <td><%= link_to "Destroy", user_image_path(@user,image), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Image", new_user_image_path(@user) %></p>

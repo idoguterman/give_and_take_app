@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.Jcrop
+//= require twitter/bootstrap
 //= require turbolinks
 //= require underscore
 //= require gmaps/google

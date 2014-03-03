@@ -1,0 +1,19 @@
+<% title "Image" %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @image.description %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @image.user_id %>
+</p>
+<p>
+<strong>Image: </strong>
+<%= image_tag @image.avatar_url(:small) %>
+</p>
+<p>
+  <%= link_to "Edit", edit_user_image_path(@user, @image) %> |
+  <%= link_to "Destroy", @image, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", user_images_path(@user) %>
+</p>

@@ -1,0 +1,59 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+.navbar .brand{
+  padding: 0 0px;
+}
+
+.navbar .brand img{
+  height: 40px;
+  width: 40px;
+}
+
+.navbar .navbar-inner{
+  padding: 5px 20px;
+}
+
+form.new_user input.btn{
+  max-width: 220px;
+}
+
+ body {
+            padding-top: 20px;
+            padding-bottom: 40px;
+        }
+        /* Custom container */
+        .container-narrow {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+        .container-narrow > hr {
+            margin: 30px 0;
+        }
+        /* Main marketing message and sign up button */
+        .jumbotron {
+            font-color: #FFF;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .jumbotron h1 {
+            font-color: white;
+            font-size: 72px;
+            line-height: 1;
+        }
+        .jumbotron .btn {
+            font-size: 21px;
+            padding: 14px 24px;
+        }
+        /* Supporting marketing content */
+        .marketing {
+            margin: 60px 0;
+        }
+        .marketing p + h4 {
+            margin-top: 28px;
+        }

@@ -2,7 +2,6 @@ class RegistrationsController < Devise::RegistrationsController
   
   after_filter :delete_omniauth, :only => :create
 
-
   def create
     super
     session[:omniauth] = nil unless @user.new_record?
@@ -21,7 +20,7 @@ class RegistrationsController < Devise::RegistrationsController
     super
     if session[:omniauth]
       @user.apply_omniauth(session[:omniauth])
-      @user.valid?
+      @user.save! if @user.valid?
     end
     self.resource
   end

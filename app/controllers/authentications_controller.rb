@@ -8,12 +8,14 @@ class AuthenticationsController < ApplicationController
 
   def index
     @authentications = current_user.authentications if current_user
+    render :layout => "landing"
   end
 
   def create
     omniauth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(omniauth['provider'] , omniauth['uid'])
-    if authentication && authentication.user.present?      
+    
+		if authentication && authentication.user.present?      
       flash[:notice] = "Signed in successfully."
       sign_in_and_redirect(:user , authentication.user)
     elsif current_user
@@ -24,6 +26,7 @@ class AuthenticationsController < ApplicationController
       user = User.new
       # TODO : Specific handle for each provider
       user.apply_omniauth(omniauth)
+      require 'debugger';debugger
       if user.save
         flash[:notice] = "Signed in successfully."
         sign_in_and_redirect(:user, user)

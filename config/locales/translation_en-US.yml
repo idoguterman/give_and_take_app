@@ -1,0 +1,64 @@
+en-US:
+  activerecord:
+    models:
+      activity: activity  #g
+      authentication: authentication  #g
+      image: image  #g
+      location: location  #g
+      test: test  #g
+      user: user  #g
+
+    attributes:
+      activity:
+        content: content  #g
+        location: :activerecord.models.location  #g
+        name: name  #g
+        user: :activerecord.models.user  #g
+
+      authentication:
+        provider: provider  #g
+        uid: uid  #g
+        user: :activerecord.models.user  #g
+
+      image:
+        avatar: avatar  #g
+        avatar_content_type: avatar_content_type  #g
+        avatar_file_name: avatar_file_name  #g
+        avatar_file_size: avatar_file_size  #g
+        avatar_updated_at: avatar_updated_at  #g
+        crop_h: crop_h  #g
+        crop_w: crop_w  #g
+        crop_x: crop_x  #g
+        crop_y: crop_y  #g
+        description: description  #g
+        user: :activerecord.models.user  #g
+
+      location:
+        activity: :activerecord.models.activity  #g
+        address: address  #g
+        country: country  #g
+        latitude: latitude  #g
+        longitude: longitude  #g
+        state: state  #g
+        user: :activerecord.models.user  #g
+
+      user:
+        activities: activities  #g
+        age: age  #g
+        authentications: authentications  #g
+        current_location: :activerecord.models.current_location  #g
+        current_sign_in_at: current_sign_in_at  #g
+        current_sign_in_ip: current_sign_in_ip  #g
+        email: email  #g
+        encrypted_password: encrypted_password  #g
+        first_name: first_name  #g
+        gender: gender  #g
+        images: images  #g
+        last_name: last_name  #g
+        last_sign_in_at: last_sign_in_at  #g
+        last_sign_in_ip: last_sign_in_ip  #g
+        middle_name: middle_name  #g
+        picture: picture  #g
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g

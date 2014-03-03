@@ -1,6 +1,21 @@
 <% content_for :title do %>
   Sign In
 <% end %>
+<div class="container">
+<!--
+<div class="container">
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">
+        <input type="password" class="form-control" placeholder="Password" required="">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>
+
 
 <% if @authentications %>
   <% unless @authentications.empty? %>
@@ -21,22 +36,37 @@
 <% else %>
   <p><strong>Sign in through one of these services:</strong></p>
 <% end %>
-
+<div>
 <a href="/auth/twitter" class="auth_provider">
   <%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %>
   Twitter
 </a>
-<a href="/auth/facebook" class="auth_provider">
-  <%= image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook" %>
-  Facebook
-</a>
-<div class="clear"></div>
+</div>
+-->
 
-
+<div class="sign-in-div">
+<center>
+We highly recommend using Facebook so the activities shown will be better matched to you.
+</center>
+<div>
+  <a href="/auth/facebook" class="auth_provider">
+    <%= image_tag "facebook/active_404.png" %>
+  </a>
+  <br/>
+</div>
+<center>WE WILL NEVER POST ANTHING ON YOUR WALL!</center>
+<center>
+  <br/>
+  OR
+  <br/>
+</center>
+<br/>
 <% unless user_signed_in? %>
-  <p>
+  <center>
     <strong>Don't use these services?</strong>
     <%= link_to "Sign up", new_user_registration_path %> or
     <%= link_to "sign in", new_user_session_path %> with a password.
-  </p>
+  </center>
 <% end %>
+</div>
+</div>

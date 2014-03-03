@@ -11,14 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140115184839) do
+ActiveRecord::Schema.define(version: 20140208161659) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "location_id"
   end
+
+  add_index "activities", ["location_id"], name: "index_activities_on_location_id", using: :btree
+  add_index "activities", ["name"], name: "index_activities_on_name", using: :btree
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -28,6 +34,24 @@ ActiveRecord::Schema.define(version: 20140115184839) do
     t.datetime "updated_at"
   end
 
+  create_table "images", force: true do |t|
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "avatar"
+    t.integer  "crop_x"
+    t.integer  "crop_y"
+    t.integer  "crop_w"
+    t.integer  "crop_h"
+  end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
   create_table "locations", force: true do |t|
     t.string   "country"
     t.string   "state"
@@ -36,7 +60,12 @@ ActiveRecord::Schema.define(version: 20140115184839) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "activity_id"
   end
+
+  add_index "locations", ["activity_id"], name: "index_locations_on_activity_id", using: :btree
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id", using: :btree
 
   create_table "tests", force: true do |t|
     t.datetime "created_at"
@@ -56,6 +85,13 @@ ActiveRecord::Schema.define(version: 20140115184839) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "picture"
+    t.integer  "location_id"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.boolean  "gender"
+    t.integer  "age"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

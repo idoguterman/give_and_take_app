@@ -1,0 +1,8 @@
+<% title t(".title") %>
+<!-- JCrop Multiple Plugin -->
+<%= render 'form' %>
+
+<p>
+  <%= link_to t(".show"), user_image_path(@user, @image) %> |
+  <%= link_to t(".view_all"), user_images_path(@user) %>
+</p>
